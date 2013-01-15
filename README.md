@@ -75,7 +75,7 @@ Pull requests are very welcome! Make sure your patches are well tested. Please c
 ## Testing the gem locally
 
 ```bash
-    gem install guard-resque-0.x.x.gem
+gem install guard-resque-0.x.x.gem
 ```
 
 ## Building and deploying gem
