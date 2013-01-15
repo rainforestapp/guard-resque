@@ -16,13 +16,13 @@ Please be sure to have [Guard](http://github.com/guard/guard) installed before y
 Install the gem:
 
 ```bash
-gem install guard-resque
+gem install ainforest-guard-resque
 ```
 
 Add it to your Gemfile (inside test group):
 
 ```bash
-gem 'guard-resque'
+gem 'ainforest-guard-resque'
 ```
 
 Add guard definition to your Guardfile by running this command:
