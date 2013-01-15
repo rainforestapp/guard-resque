@@ -10,6 +10,13 @@ describe Guard::Resque do
       obj.send(:env).should include 'RAILS_ENV' => environment.to_s
     end
 
+    it 'should accept :term_child option' do
+      queue = :foo
+
+      obj = Guard::Resque.new [], :term_child => 2
+      obj.send(:env).should include 'TERM_CHILD' => 2.to_s
+    end
+
     it 'should accept :queue option' do
       queue = :foo
 
