@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/rainforestapp/guard-resque.png?branch=master)](https://travis-ci.org/rainforestapp/guard-resque)
+
+[![Dependency Status](https://gemnasium.com/rainforestapp/guard-resque.png)](https://gemnasium.com/rainforestapp/guard-resque)
+
+
 # Guard::Resque
 
 Guard::Resque automatically starts/stops/restarts resque workers
