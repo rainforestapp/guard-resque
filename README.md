@@ -60,7 +60,9 @@ You can customize the resque task via the following options:
 * `verbose`: whether to use verbose logging (defaults to `nil`)
 * `vverbose`: whether to use very verbose logging (defaults to `nil`)
 * `trace`: whether to include `--trace` on the rake command (defaults to `nil`)
-* `stop_signal`: how to kill the process when restarting (defaults to `QUIT`)
+* `stop_signal`: how to kill the process when restarting (defaults to `SIGTERM`)
+* `stop_timeout`: how long to wait (in seconds) for resque to exit (defaults to 5 seconds, one more than the resque default)
+* `term_child`: defaults to 1 to use the new signal handling in 2.x
 
 
 ## Development

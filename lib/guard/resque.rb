@@ -23,6 +23,7 @@ module Guard
     #  - :trace e.g. true
     #  - :stop_signal e.g. :QUIT or :SIGQUIT
     #  - :stop_timeout in seconds. Defaults to 5 seconds (one more than resque)
+    #  - :term_child defaults to 1 to use the new signal handling in 2.x
     def initialize watchers = [], options = {}
       @options = options
       @pid = nil
