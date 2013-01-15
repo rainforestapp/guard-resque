@@ -23,7 +23,7 @@ module Guard
     #  - :trace e.g. true
     #  - :stop_signal e.g. :QUIT or :SIGQUIT
     #  - :stop_timeout in seconds. Defaults to 5 seconds (one more than resque)
-    def initialize(watchers = [], options = {})
+    def initialize watchers = [], options = {}
       @options = options
       @pid = nil
       @stop_signal = options[:stop_signal] || DEFAULT_SIGNAL
@@ -95,7 +95,7 @@ module Guard
       # trace setting
       command << '--trace' if @options[:trace]
 
-      return command.join(' ')
+      command.join(' ')
     end
 
     def env
@@ -110,7 +110,7 @@ module Guard
       var['VERBOSE']  = '1' if @options[:verbose]
       var['VVERBOSE'] = '1' if @options[:vverbose]
 
-      return var
+      var
     end
   end
 end
