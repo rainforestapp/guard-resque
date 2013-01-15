@@ -5,6 +5,7 @@ require 'timeout'
 module Guard
   class Resque < Guard
 
+    DEFAULT_TERM_CHILD = 1
     DEFAULT_SIGNAL = :SIGTERM
     DEFAULT_QUEUE = '*'.freeze
     DEFAULT_COUNT = 1
@@ -25,6 +26,8 @@ module Guard
       @options = options
       @pid = nil
       @stop_signal = options[:stop_signal] || DEFAULT_SIGNAL
+
+      @options[:term_child] ||= DEFAULT_TERM_CHILD
       @options[:queue] ||= DEFAULT_QUEUE
       @options[:count] ||= DEFAULT_COUNT
       @options[:task] ||= (@options[:count].to_i == 1) ? DEFAULT_TASK_SINGLE : DEFAULT_TASK_MULTIPLE
@@ -96,6 +99,7 @@ module Guard
     def env
       var = Hash.new
 
+      var['TERM_CHILD']= @options[:term_child].to_s  if @options[:term_child]
       var['INTERVAL']  = @options[:interval].to_s    if @options[:interval]
       var['QUEUE']     = @options[:queue].to_s       if @options[:queue]
       var['COUNT']     = @options[:count].to_s       if @options[:count]
