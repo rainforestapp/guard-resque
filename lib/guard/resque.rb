@@ -38,8 +38,8 @@ module Guard
 
     def start
       stop
-      UI.info 'Starting up resque...'
-      UI.info [ cmd, env.map{|v| v.join('=')} ].join(' ')
+      UI.info 'Resque: Starting...'
+      UI.info 'Resque: ' + [ cmd, env.map{|v| v.join('=')} ].join(' ')
 
       # launch Resque worker
       @pid = spawn(env, cmd)
@@ -47,28 +47,28 @@ module Guard
 
     def stop
       if @pid
-        UI.info 'Stopping resque...'
+        UI.info 'Resque: Stopping...'
         ::Process.kill @stop_signal, @pid
         begin
           Timeout.timeout(@stop_timeout) do
             ::Process.wait @pid
           end
         rescue Timeout::Error
-          UI.info 'Sending SIGKILL to resque, as it\'s taking too long to shutdown.'
+          UI.info "Resque: Sending SIGKILL as it has taken longer than #{@stop_timeout} to exit. Customize this with the stop_timeout option."
           ::Process.kill :KILL, @pid
           ::Process.wait @pid
         end
-        UI.info 'Stopped process resque'
+        UI.info 'Resque: Stopped'
       end
     rescue Errno::ESRCH
-      UI.info 'Guard::Resque lost the Resque worker subprocess!'
+      UI.info 'Resque: lost the worker subprocess!'
     ensure
       @pid = nil
     end
 
     # Called on Ctrl-Z signal
     def reload
-      UI.info 'Restarting resque...'
+      UI.info 'Resque: Restarting...'
       restart
     end
 
