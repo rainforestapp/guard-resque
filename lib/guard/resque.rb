@@ -78,7 +78,7 @@ module Guard
     end
 
     # Called on file(s) modifications
-    def run_on_changes(paths)
+    def run_on_changes paths
       restart
     end
 
