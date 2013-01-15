@@ -2,30 +2,35 @@
 
 Guard::Resque automatically starts/stops/restarts resque workers
 
-*forked from [Guard::Delayed](http://github.com/suranyami/guard-delayed)*
+*Forked from [Guard::Resque](http://github.com/railsjedi/guard-resque)*
 
 ## Install
 
-Please be sure to have [Guard](http://github.com/guard/guard) installed before continue.
+Please be sure to have [Guard](http://github.com/guard/guard) installed before you continue.
 
 Install the gem:
 
+```bash
     gem install guard-resque
+```
 
 Add it to your Gemfile (inside test group):
 
+```bash
     gem 'guard-resque'
+```
 
 Add guard definition to your Guardfile by running this command:
 
+```bash
     guard init resque
+```
 
 ## Usage
 
-Please read [Guard usage doc](http://github.com/guard/guard#readme).
+Please read Guards [usage documents](http://github.com/guard/guard#readme).
 
-I suggest you put the resque guard definition *before* your test/rspec guard if your tests depend on it
-being active.
+I suggest you put the resque guard definition *before* your test/rspec guard if your tests depend on it being active.
 
 ## Guardfile
 
@@ -54,15 +59,16 @@ You can customize the resque task via the following options:
 
 ## Development
 
- * Source hosted at [GitHub](http://github.com/railsjedi/guard-resque)
- * Report issues/Questions/Feature requests on [GitHub Issues](http://github.com/railsjedi/guard-resque/issues)
+ * Source hosted at [GitHub](http://github.com/ukd1/guard-resque)
+ * Report issues/Questions/Feature requests on [GitHub Issues](http://github.com/ukd1/guard-resque/issues)
 
-Pull requests are very welcome! Make sure your patches are well tested. Please create a topic branch for every separate change
-you make.
+Pull requests are very welcome! Make sure your patches are well tested. Please create a topic branch for every separate change you make.
 
 ## Testing the gem locally
 
+```bash
     gem install guard-resque-0.x.x.gem
+```
 
 ## Building and deploying gem
 
@@ -70,24 +76,26 @@ you make.
  * Update `CHANGELOG.md`
  * Build the gem:
 
+```bash
     gem build guard-resque.gemspec
+```
 
  * Push to rubygems.org:
 
+```bash
     gem push guard-resque-0.x.x.gem
+```
 
 
 ## Guard::Delayed Authors
 
-[David Parry](https://github.com/suranyami)
-[Dennis Reimann](https://github.com/dbloete)
+  * [David Parry](https://github.com/suranyami)
+  * [Dennis Reimann](https://github.com/dbloete)
 
 Ideas for this gem came from [Guard::WEBrick](http://github.com/fnichol/guard-webrick).
 
 
 ## Guard::Resque Authors
 
-[Jacques Crocker](https://github.com/railsjedi)
-
-I hacked this together from the `guard-delayed` gem for use with Resque. All credit go to the original authors though. I just search/replaced and tweaked a few things
+[Jacques Crocker](https://github.com/railsjedi) hacked this together from the `guard-delayed` gem for use with Resque. All credit go to the original authors though. Jacques just search/replaced and tweaked a few things, I've [ukd1](https://github.com/ukd1) only fixed a few issues that have cropped up recently that were annoying and unfixed.
 
