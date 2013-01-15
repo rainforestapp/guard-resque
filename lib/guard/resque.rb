@@ -22,10 +22,12 @@ module Guard
     #  - :vverbose e.g. true
     #  - :trace e.g. true
     #  - :stop_signal e.g. :QUIT or :SIGQUIT
+    #  - :stop_timeout in seconds. Defaults to 5 seconds (one more than resque)
     def initialize(watchers = [], options = {})
       @options = options
       @pid = nil
       @stop_signal = options[:stop_signal] || DEFAULT_SIGNAL
+      @stop_timeout = options[:stop_timeout] || 5
 
       @options[:term_child] ||= DEFAULT_TERM_CHILD
       @options[:queue] ||= DEFAULT_QUEUE
@@ -48,7 +50,7 @@ module Guard
         UI.info 'Stopping resque...'
         ::Process.kill @stop_signal, @pid
         begin
-          Timeout.timeout(15) do
+          Timeout.timeout(@stop_timeout) do
             ::Process.wait @pid
           end
         rescue Timeout::Error
