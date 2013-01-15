@@ -37,7 +37,7 @@ Please read Guards [usage documents](http://github.com/guard/guard#readme).
 
 I suggest you put the resque guard definition *before* your test/rspec guard if your tests depend on it being active.
 
-## Guardfile
+### Guardfile
 
 ```ruby
 guard 'resque', :environment => 'development' do
@@ -48,7 +48,7 @@ end
 
 Feel free to be more specific, for example watching only for `app/models` and `app/jobs` to avoid reloading on a javascript file change.
 
-## Options
+### Options
 
 You can customize the resque task via the following options:
 
@@ -72,13 +72,13 @@ You can customize the resque task via the following options:
 
 Pull requests are very welcome! Make sure your patches are well tested. Please create a topic branch for every separate change you make.
 
-## Testing the gem locally
+### Testing the gem locally
 
 ```bash
 gem install guard-resque-0.x.x.gem
 ```
 
-## Building and deploying gem
+### Building and deploying gem
 
  * Update the version number in `lib/guard/resque/version.rb`
  * Update `CHANGELOG.md`
@@ -95,7 +95,7 @@ gem push guard-resque-0.x.x.gem
 ```
 
 
-## Guard::Delayed Authors
+### Guard::Delayed Authors
 
   * [David Parry](https://github.com/suranyami)
   * [Dennis Reimann](https://github.com/dbloete)
@@ -103,6 +103,8 @@ gem push guard-resque-0.x.x.gem
 Ideas for this gem came from [Guard::WEBrick](http://github.com/fnichol/guard-webrick).
 
 
-## Guard::Resque Authors
+### Guard::Resque Authors
 
-[Jacques Crocker](https://github.com/railsjedi) hacked this together from the `guard-delayed` gem for use with Resque. All credit go to the original authors though. Jacques just search/replaced and tweaked a few things, I've [ukd1](https://github.com/ukd1) only fixed a few issues that have cropped up recently that were annoying and unfixed.
+[Jacques Crocker](https://github.com/railsjedi) hacked this together from the `guard-delayed` gem for use with Resque. All credit go to the original authors though. Jacques just search/replaced and tweaked a few things.
+
+I've ([ukd1](https://github.com/ukd1)) only fixed a few issues that have cropped up recently that were annoying and unfixed.
