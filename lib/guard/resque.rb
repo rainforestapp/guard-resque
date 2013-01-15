@@ -5,7 +5,7 @@ require 'timeout'
 module Guard
   class Resque < Guard
 
-    DEFAULT_SIGNAL = :QUIT
+    DEFAULT_SIGNAL = :SIGTERM
     DEFAULT_QUEUE = '*'.freeze
     DEFAULT_COUNT = 1
     DEFAULT_TASK_SINGLE = 'resque:work'.freeze
