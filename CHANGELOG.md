@@ -1,3 +1,12 @@
+## 0.0.6
+
+ * Clarified documentation
+ * Fixed "WARNING: This way of doing signal handling is now deprecated. Please see http://hone.heroku.com/resque/2012/08/21/resque-signals.html for more info."
+
+## 0.0.5
+
+ * Unknown (to be updated later)
+
 ## 0.0.4
 
  * Add a :vverbose option to distinguish from the :verbose option
