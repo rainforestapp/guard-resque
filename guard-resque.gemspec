@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require "guard/resque/version"
 
 Gem::Specification.new do |s|
-  s.name        = "guard-resque"
+  s.name        = "rainforest-guard-resque"
   s.version     = Guard::ResqueVersion::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Jacques Crocker", "Ryan Long", "David Parry", "Jim Deville", "Russell Smith"]
