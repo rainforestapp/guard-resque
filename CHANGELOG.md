@@ -1,6 +1,10 @@
-## 0.0.6
+## 0.0.6 (2013-01-15)
 
+ * Added Travis CI image and set it up
+ * Added Gemnasium to check dependancies
  * Clarified documentation
+ * Made the output to Guard's console more consistent
+ * Allow custom SIGKILL timeout instead
  * Fixed "WARNING: This way of doing signal handling is now deprecated. Please see http://hone.heroku.com/resque/2012/08/21/resque-signals.html for more info."
 
 ## 0.0.5
