@@ -108,3 +108,8 @@ Ideas for this gem came from [Guard::WEBrick](http://github.com/fnichol/guard-we
 [Jacques Crocker](https://github.com/railsjedi) hacked this together from the `guard-delayed` gem for use with Resque. All credit go to the original authors though. Jacques just search/replaced and tweaked a few things.
 
 I've ([ukd1](https://github.com/ukd1)) only fixed a few issues that have cropped up recently that were annoying and unfixed.
+
+
+## License
+
+MIT License. See [LICENSE](/rainforestapp/guard-resque/blob/master/LICENSE) for details.
