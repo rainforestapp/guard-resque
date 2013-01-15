@@ -11,19 +11,19 @@ Please be sure to have [Guard](http://github.com/guard/guard) installed before y
 Install the gem:
 
 ```bash
-    gem install guard-resque
+gem install guard-resque
 ```
 
 Add it to your Gemfile (inside test group):
 
 ```bash
-    gem 'guard-resque'
+gem 'guard-resque'
 ```
 
 Add guard definition to your Guardfile by running this command:
 
 ```bash
-    guard init resque
+guard init resque
 ```
 
 ## Usage
@@ -34,13 +34,14 @@ I suggest you put the resque guard definition *before* your test/rspec guard if 
 
 ## Guardfile
 
-    guard 'resque', :environment => 'development' do
-      watch(%r{^app/(.+)\.rb$})
-      watch(%r{^lib/(.+)\.rb$})
-    end
+```ruby
+guard 'resque', :environment => 'development' do
+  watch(%r{^app/(.+)\.rb$})
+  watch(%r{^lib/(.+)\.rb$})
+end
+```
 
-Feel free to be more specific, for example watching only for `app/models` and `app/jobs`
-to avoid reloading on a javascript file change.
+Feel free to be more specific, for example watching only for `app/models` and `app/jobs` to avoid reloading on a javascript file change.
 
 ## Options
 
@@ -77,13 +78,13 @@ Pull requests are very welcome! Make sure your patches are well tested. Please c
  * Build the gem:
 
 ```bash
-    gem build guard-resque.gemspec
+gem build guard-resque.gemspec
 ```
 
  * Push to rubygems.org:
 
 ```bash
-    gem push guard-resque-0.x.x.gem
+gem push guard-resque-0.x.x.gem
 ```
 
 
@@ -98,4 +99,3 @@ Ideas for this gem came from [Guard::WEBrick](http://github.com/fnichol/guard-we
 ## Guard::Resque Authors
 
 [Jacques Crocker](https://github.com/railsjedi) hacked this together from the `guard-delayed` gem for use with Resque. All credit go to the original authors though. Jacques just search/replaced and tweaked a few things, I've [ukd1](https://github.com/ukd1) only fixed a few issues that have cropped up recently that were annoying and unfixed.
-
